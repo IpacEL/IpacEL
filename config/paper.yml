@@ -1,0 +1,386 @@
+# This is the main configuration file for Paper.
+# As you can see, there's tons to configure. Some options may impact gameplay, so use
+# with caution, and make sure you know what each option does before configuring.
+# 
+# If you need help with the configuration or have any questions related to Paper,
+# join us in our Discord or IRC channel.
+# 
+# Discord: https://discord.gg/papermc
+# IRC: #paper @ irc.esper.net #paper @ irc.esper.net ( https://webchat.esper.net/?channels=paper ) 
+# Website: https://papermc.io/ 
+# Docs: https://paper.readthedocs.org/ 
+
+verbose: false #转储配置文件到日志
+use-display-name-in-quit-message: false #在退出消息中使用显示名称
+config-version: 24 #配置版本
+timings:
+  enabled: false #如果此服务器位于Velocity代理之后, 则将此设置为true, 如果这是真的, 请不要在spigot.yml中启用bungeecord设置 #是否启用[在一开始就加载]
+  verbose: true #在其报告中提供更具体的信息
+  server-name-privacy: true #在Timings中隐藏服务器名称
+  hidden-config-entries: #隐藏配置项
+  - database
+  - settings.bungeecord-addresses
+  - settings.velocity-support.secret
+  - web-services.token
+  - settings.seed
+  - server-ip
+  history-interval: 300 #计时报告中各个点之间的时间间隔[以秒为单位]
+  history-length: 3600 #单个报告保留的数据总量
+  server-name: IpacEL #服务器名称
+  url: https://timings.pl3x.net
+settings:
+  lag-compensate-block-breaking: true #服务器是否应该使用 time 来确定方块的破坏和放置 [tuinity]
+  log-player-ip-addresses: true #当设置为 false 时, 服务器日志中的玩家 IP 地址将被替换为 <ip 地址保留>
+  send-full-pos-for-hard-colliding-entities: true #发送实体精准位置 [tuinity]
+  load-permissions-yml-before-plugins: true #在插件之前加载bukkit的permission.yml文件
+  region-file-cache-size: 256 #区域文件缓存的最大大小
+  enable-player-collisions: true #是否应允许玩家相互碰撞
+  save-empty-scoreboard-teams: false #是否自动删除空记分板
+  bungee-online-mode: true #服务器在崩溃后如何处理玩家UUID和数据?
+  incoming-packet-spam-threshold: 300 #设置服务器将传入数据包视为垃圾邮件并忽略它们的阈值
+  suggest-player-names-when-null-tab-completions: true #如果插件没有自己的选项卡完成, 则指示服务器在选项卡完成时返回播放器列表
+  use-alternative-luck-formula: false #使用Aikar的替代运气公式, 允许将运气应用于未定义质量的项目, 对钓鱼公式进行重大更改
+  chunk-tasks-per-tick: 1000 #每tick最多处理多少次区块运算
+  console-has-all-permissions: true #设置控制台命令发送者是否拥有所有权限
+  player-auto-save-rate: -1 #设置玩家应该被保存的频率, -1 = 推荐值
+  max-player-auto-save-per-tick: -1 #在一个刻度中最多应该保存多少玩家, -1 = 推荐值
+  max-joins-per-tick: 10 #设置一次可加入服务器的最大玩家数量, 如果有更多玩家加入, 他们将被推迟到稍后加入
+  track-plugin-scoreboards: false #服务器是否应该跟踪只有虚拟目标的插件记分板, 这是一个突破性的变化: 然而它提供了一个更合理的默认值, 通过使用许多记分板的插件启用此功能会导致性能下降
+  fix-entity-position-desync: true #修复了项目位置在客户端和服务器之间不同步的问题
+  watchdog:
+    early-warning-every: 5000 #服务器挂起时打印线程转储之间的间隔[以毫秒为单位]
+    early-warning-delay: 10000 #服务器开始挂起后看门狗线程开始打印线程转储之前的毫秒数
+  spam-limiter:
+    tab-spam-increment: 1 #当玩家在聊天窗口中按下标签时, 内部标签垃圾邮件计数器增加的数字
+    tab-spam-limit: 500 #内部标签垃圾邮件计数器可以达到的数字, 直到服务器将玩家踢为垃圾邮件
+    recipe-spam-increment: 1 #当玩家按下食谱时, 食谱垃圾邮件计数器增加的数字
+    recipe-spam-limit: 20 #配方垃圾邮件计数器可以达到的数字, 直到服务器将玩家踢为垃圾邮件
+  velocity-support: #如果此服务器位于Velocity代理之后, 请将其设置为true [同时在spigot.yml中关闭bungeecord]
+    enabled: false
+    online-mode: false #指示服务器在速度落后时如何处理玩家UUID和数据, 设置为匹配您的代理的在线模式设置
+    secret: '' #由您的Velocity代理和此服务器共享的秘密字符串, 这需要与您的代理的转发秘密设置相匹配
+  book-size:
+    page-max: 2048 #一本书单个页面允许的最大字节数
+    total-multiplier: 0.96 #每个页面都有最后一页的字节倍数, 因为它对一本书的允许字节总数的贡献
+  async-chunks:
+    threads: -1 #服务器用于保存和加载世界的线程数, -1
+  unsupported-settings:
+    allow-permanent-block-break-exploits: true #是否允许破坏基岩等方块
+    allow-piston-duplication: true #是否允许复制TNT等
+    allow-headless-pistons: true #允许无头活塞
+    allow-permanent-block-break-exploits-readme: This setting controls if players
+      should be able to break bedrock, end portals and other intended to be permanent
+      blocks.
+    allow-piston-duplication-readme: This setting controls if player should be able
+      to use TNT duplication, but this also allows duplicating carpet, rails and potentially
+      other items
+    allow-headless-pistons-readme: This setting controls if players should be able
+      to create headless pistons.
+  console:
+    enable-brigadier-highlighting: true #在服务器控制台中启用Mojang的Brigadier高亮显示
+    enable-brigadier-completions: true #在服务器控制台中启用Mojang的Brigadier命令补全
+  item-validation:
+    display-name: 8192 #覆盖Spigot对项目显示名称长度的限制
+    loc-name: 8192 #覆盖Spigot对可翻译项目名称长度的限制
+    lore-line: 8192 #覆盖Spigot对绝杀标题长度的限制
+    book:
+      title: 8192 #覆盖Spigot对书名长度的限制
+      author: 8192 #覆盖Spigot对书籍作者长度的限制
+      page: 16384 #覆盖Spigot对单个书页长度的限制
+  use-display-name-in-quit-message: false #设置服务器是否应在退出消息中使用玩家的显示名称
+  loggers: #日志记录器
+    deobfuscate-stacktraces: true #去混淆堆栈跟踪?
+  packet-limiter: # [tuinity]
+    kick-message: '§bIpacEL §f> §b数据包异常'
+    limits:
+      all: #本节适用于所有传入的数据包
+        interval: 7.0 #max-packet-rate 的间隔 秒
+        max-packet-rate: 500.0 #interval 内每个玩家允许的任何数据包的数量
+      PacketPlayInAutoRecipe: #本节根据时序中显示的数据包名称或更高级用户的类名称, 对每个数据包应用特定限制
+        interval: 4.0
+        max-packet-rate: 10.0
+        action: KICK #DROP = 忽略, KICK = 踢出
+  chunk-loading: #玩家-区块
+    min-load-radius: 2 #在未节流的玩家周围尝试加载的区块半径? 因为此配置控制客户端实际能够渲染的块
+    max-concurrent-sends: 4 #最大并发块数量[-1无效] 2
+    autoconfig-send-distance: true #是否根据玩家的客户端视野距离自动配置玩家的发送视野距离
+    target-player-chunk-send-rate: 100.0 #一秒钟内发送给单个玩家的最大块数 100.0
+    global-max-chunk-send-rate: -1 #服务器全局每秒发送的最大区块数量 -1
+    enable-frustum-priority: true #是否先加载玩家正在看的地方的区块
+    global-max-chunk-load-rate: -1 #服务器全局每秒加载的最大区块数量, 包括已生成的区块 -1不限制
+    player-max-concurrent-loads: 4.0 #每个玩家一次处理的最大块加载数[-1无效] 4.0
+    global-max-concurrent-loads: 500.0 #一次为整个服务器处理的最大块加载数[如果超过, 将覆盖 player-max-concurrent-loads] -1不限制
+messages:
+  no-permission: §bIpacEL §f> §a这个指令出乎意料的掉进了水中
+  kick:
+    flying-player: §bIpacEL §f> §b此服务器上未启用飞行
+    flying-vehicle: §bIpacEL §f> §b此服务器上未启用飞行
+    authentication-servers-down: §b服务器 §f> §b因身份验证服务器关闭
+    connection-throttle: §bIpacEL §f> §b连接受限
+world-settings:
+  default:
+    map-item-frame-cursor-update-interval: 10 #更新物品展示框中地图上的玩家光标的时间间隔
+    allow-player-cramming-damage: false #允许玩家在比 maxEntityCramming 中设置的更多的实体发生碰撞时受到伤害 [挤压]
+    piglins-guard-chests: true #猪灵守护箱子
+    split-overstacked-loot: true #当潜影盒在生存模式中损坏时, 这将防止堆积过多的物品丢失或导致大块变得无法居住[由于玩家因包裹过大而不断被踢]
+    baby-zombie-movement-modifier: 0.5 #小僵尸的移动速度
+    spawner-nerfed-mobs-should-jump: false #刷怪笼的怪物是否应该飘在水上
+    keep-spawn-loaded: false #保持出生点附近的区块被加载
+    falling-block-height-nerf: 0 #从服务器中移除掉落的方块的高度, 0为禁用
+    tnt-entity-height-nerf: 0 #TNT实体将从服务器中移除的高度
+    nether-ceiling-void-damage-height: 0 #玩家在下界天花板上是否受到伤害
+    max-leash-distance: 14.0 #拴绳断裂的距离
+    optimize-explosions: true #爆炸缓存实体, 这会显着加快爆炸速度
+    disable-explosion-knockback: false #完全阻止因爆炸而发生的任何击退
+    disable-thunder: false #是否禁用闪电
+    disable-ice-and-snow: false #是否禁用冰雪
+    mob-spawner-tick-rate: 1 #刷怪笼在可刷怪区域内尝试生成怪物的速度
+    container-update-tick-rate: 1 #容器更新刻
+    all-chunks-are-slime-chunks: false #所有区块都生成史莱姆
+    portal-search-radius: 128 #服务器寻找地狱门的距离, 找不到就新建一个
+    portal-create-radius: 16 #在此位置内随机创建一个
+    portal-search-vanilla-dimension-scaling: true #是否对portal-search-radius应用普通尺寸缩放
+    disable-teleportation-suffocation-check: false #在传送玩家之前禁用服务器执行的窒息检查 可能使玩家穿墙
+    allow-non-player-entities-on-scoreboards: false #将非玩家实体视为从未出现在记分板上
+    non-player-arrow-despawn-rate: -1 #非玩家实体射出的弓箭消失时间 刻 -1
+    creative-arrow-despawn-rate: -1 #创造模式的箭消失速度 刻 -1
+    skeleton-horse-thunder-spawn-chance: 0.01 #骷髅陷阱在雷暴中的生成几率
+    fixed-chunk-inhabited-time: -1 #chunk的驻留时间
+    grass-spread-tick-rate: 1 #草方块生成刻
+    use-vanilla-world-scoreboard-name-coloring: false #指示服务器使用vanilla记分牌为玩家昵称着色
+    prevent-tnt-from-moving-in-water: false #是否防止TNT在水中流动
+    remove-corrupt-tile-entities: true #自动删除它检测为损坏且无法修复的实体
+    filter-nbt-data-from-spawn-eggs-and-related: true #从怪物蛋和掉落物中删除NBT数据
+    enable-treasure-maps: true #允许村民交易藏宝图
+    treasure-maps-return-already-discovered: true #以找到的第一个宝藏位置为目标, 而不是第一个未被发现的宝藏位置
+    seed-based-feature-search: true #在特征搜索期间加载之前, 服务器是否应该检查块的生物群系 由世界种子确定 是否可以支持所需的特征, 这大大减少了特征搜索期间加载的块数量
+    seed-based-feature-search-loads-chunks: true #当设置为false时, seed-based-feature-search 会加载目标块, 相反, 它将返回块的中心
+    max-entity-collisions: 5 #在达到此值后停止处理实体碰撞
+    parrots-are-unaffected-by-player-movement: false #使鹦鹉黏在玩家身上, 用潜行让鹦鹉掉下来
+    disable-creeper-lingering-effect: false #随机禁用苦力怕, 留下一个挥之不去的区域效果云
+    experience-merge-max-value: -1 #单个经验球的存储最大值
+    iron-golems-can-spawn-in-air: false #铁傀儡是否可以在空中生成
+    armor-stands-do-collision-entity-lookups: false #盔甲架实体进行实体碰撞检查
+    armor-stands-tick: true #禁用让盔甲架不再被计入tick
+    water-over-lava-flow-speed: 5 #设置水在熔岩上流动的速度
+    prevent-moving-into-unloaded-chunks: true #是否会阻止玩家进入未加载的区块
+    duplicate-uuid-resolver: saferegen #指定服务器用于解析具有重复 UUID 的实体的方法 saferegen=重新生成
+    duplicate-uuid-saferegen-delete-range: 32 #如果多个具有重复 UUID 的实体在这么多块内, saferegen 将删除除 1 个之外的所有实体
+    keep-spawn-loaded-range: 1 #出生点周围的区块保持加载
+    auto-save-interval: -1 #示这个世界使用特定值进行自动保存, 而不是bukkit的全局值
+    max-auto-save-chunks-per-tick: 4 #自动保存系统每刻保存的区块数
+    count-all-mobs-for-spawning: true #刷怪笼和杂项生物是否计入全局生物上限
+    per-player-mob-spawns: true #启用此设置会产生大致相同数量的怪物, 但分布更均匀, 可提供更像单人游戏的体验
+    entities-target-with-follow-range: false #设置服务器在定位实体时是否应使用跟随范围
+    zombie-villager-infection-chance: -1.0 #将村民转换为僵尸村民的变化设置为 -1.0 = 游戏默认
+    light-queue-size: 20 #每个世界的主线程的光更新队列应该有多大
+    phantoms-do-not-spawn-on-creative-players: true #在创造模式下禁止玩家产生"幻翼"
+    phantoms-only-attack-insomniacs: true #防止幻影攻击睡着的玩家
+    delay-chunk-unloads-by: 15s #按指定时间延迟块卸载
+    zombies-target-turtle-eggs: true #设置僵尸和僵尸猪灵是否应该以海龟蛋为目标
+    use-faster-eigencraft-redstone: true #更高性能的红石
+    should-remove-dragon: false #是否在没有传送门的情况下移除龙
+    only-players-collide: false #仅计算玩家的碰撞
+    allow-vehicle-collisions: true #矿车碰撞
+    fix-climbing-bypassing-cramming-rule: true #修复实体在攀爬过程中不受空间范围内最大实体数量限制 梯子 挤压
+    ender-dragons-death-always-places-dragon-egg: true #控制末影龙在死亡时是否应该总是掉落龙蛋
+    update-pathfinding-on-block-update: true #控制在世界中更新方块时是否更新怪物的寻路
+    fix-wither-targeting-bug: true #修复了凋灵对玩家的定位 MC-29274
+    allow-using-signs-inside-spawn-protection: false #允许玩家在生成保护内使用标志
+    map-item-frame-cursor-limit: 7 #每个地图允许的游标数量 128
+    fix-items-merging-through-walls: false #是否应防止物品穿过墙壁合并 性能下降
+    show-sign-click-command-failure-msgs-to-player: true #通过符号点击执行的命令是否应向玩家显示失败消息
+    max-growth-height:
+      cactus: 3 #仙人掌最大生长高度
+      reeds: 3 #甘蔗/芦苇块
+      bamboo: #竹子
+        max: 16
+        min: 11
+    fishing-time-range:
+      MinimumTicks: 70 #鱼上钩最小刻度
+      MaximumTicks: 450 #鱼上钩最大刻度
+    despawn-ranges: #控制怪物消失距离
+      monster: #怪物
+        soft: 32 #随机消失
+        hard: 128 #直接消失
+      creature: #生物
+        soft: 32
+        hard: 128
+      ambient: #环境生物
+        soft: 32
+        hard: 128
+      underground_water_creature: #地下水生物
+        soft: 32
+        hard: 128
+      water_creature: #水生物
+        soft: 32
+        hard: 128
+      water_ambient: #水环境
+        soft: 32
+        hard: 64
+      misc: #杂项
+        soft: 32
+        hard: 128
+    game-mechanics:
+      disable-end-credits: false #在离开末地的时候永远不会显示游戏积分
+      disable-chest-cat-detection: true #关闭箱子猫检查
+      disable-player-crits: false #在PvP中禁用重击, 而不是将它们视为正常命中
+      disable-sprint-interruption-on-attack: false #玩家疾跑受到攻击是否打断
+      disable-unloaded-chunk-enderpearl-exploit: true #防止末影珍珠在未加载的区块中存放投掷器
+      shield-blocking-delay: 0 #玩家激活护盾与实际阻挡伤害之间的滴答数 5
+      scan-for-legacy-ender-dragon: true #确定服务器在加载旧世界时是否搜索末影龙
+      disable-relative-projectile-velocity: false #在计算发射箭头的速度时忽略射手速度
+      disable-pillager-patrols: false #禁用掠夺者巡逻和相关的人工智能
+      nerf-pigmen-from-nether-portals: false #从下界传送门上生成的猪人中移除AI
+      fix-curing-zombie-villager-discount-exploit: false #修复了通过感染和治愈僵尸村民来获得大量折扣的漏洞
+      disable-mob-spawner-spawn-egg-transformation: true #是否阻止玩家使用刷怪蛋改变刷怪箱的类型
+      pillager-patrols:
+        spawn-chance: 0.2 #修改巡逻的产卵变化
+        spawn-delay: #突袭
+          per-player: false #使每个玩家产生延迟
+          ticks: 12000 #生成机会之间的滴答延迟
+        start:
+          per-player: false #每个玩家的天数
+          day: 5 #突袭产生之间的天数
+    frosted-ice: #启用冰霜
+      enabled: true
+      delay:
+        min: 20 #应用磨砂冰效果的最小 RNG 值
+        max: 40 #最大
+    lootables:
+      auto-replenish: true #指示服务器自动补充可掠夺的容器
+      restrict-player-reloot: false #防止相同的玩家回来并一遍又一遍地重新掠夺相同的容器
+      reset-seed-on-fill: true #在每次补充时有效地随机化新的战利品
+      max-refills: -1 #设置可重新填充战利品的最大次数 -1 = 无限
+      refresh-min: 7d #在战利品有资格被重新填充之前必须经过的最短时间
+      refresh-max: 10d #在重新填充战利品之前可以经过的最长时间
+    mobs-can-always-pick-up-loot:
+      zombies: false #僵尸是否总是捡起战利品
+      skeletons: false #骷髅是否总是捡起战利品
+    squid-spawn-height:
+      maximum: 0.0 #鱿鱼生成的最大高度
+    anti-xray: #反矿透
+      max-block-height: 128 #隐藏矿石的高度, 16的倍数, 64以上地狱需要
+      enabled: true
+      engine-mode: 1 #1 = 替换矿物 2 = 替换所有
+      max-chunk-section-index: 7 #指生效的高度,
+      update-radius: 2 #隐藏与空气或水接触的矿物的距离 [更新距离]
+      lava-obscures: true #是否混淆接触熔岩的方块
+      use-permission: false #是否允许拥有 paper.antixray.bypass 权限的玩家绕过 anti-xray
+      hidden-blocks:
+      #主世界矿石
+      - coal_ore #煤炭矿石
+      - deepslate_coal_ore
+      - iron_ore #铁矿石
+      - deepslate_iron_ore
+      - copper_ore #铜矿石
+      - deepslate_copper_ore
+      - gold_ore #金矿石
+      - deepslate_gold_ore
+      - redstone_ore #红石
+      - deepslate_redstone_ore
+      - emerald_ore #翡翠
+      - deepslate_emerald_ore
+      - lapis_ore #青金石
+      - deepslate_lapis_ore
+      - diamond_ore #钻石
+      - deepslate_diamond_ore
+      #地狱矿石
+      - nether_gold_ore #下界金矿
+      - nether_quartz_ore #石英
+      - ancient_debris #远古残骸
+      - gilded_blackstone #镶金黑石
+      - magma_block #岩浆块
+      
+      #其他
+      - chest #箱子
+      - lava #岩浆
+      - water #水
+      - infested_stone #虫蛀_石头
+      - infested_cobblestone #虫蛀_原石
+      - bedrock #基岩
+      
+      #测试
+      - netherrack #地狱岩
+      
+      #普通的石头
+      - clay #粘土
+      - mossy_cobblestone #苔石
+      - cobblestone #原石
+      - sandstone #沙石
+      - granite #花岗岩
+      - diorite #闪长岩
+      - andesite #安山岩
+      - coarse_dirt #砂土
+      - gravel #沙砾
+      - amethyst_block #紫水晶块
+      - budding_amethyst #紫水晶母岩
+      - deepslate #深板岩
+      - tuff #凝灰岩
+      - smooth_basalt #平滑玄武岩
+      - calcite #方解石
+      replacement-blocks:
+      - stone #石头
+      #- netherrack #地狱石头
+    alt-item-despawn-rate:
+      enabled: false
+      items: #确定每个物品消失的时间间隔
+        #COBBLESTONE: 300 #原石
+        ROTTEN_FLESH: 300 #腐肉
+        SPIDER_EYE: 300 #蜘蛛眼
+        GOLDEN_SWORD: 300 #金剑
+    generator-settings:
+      flat-bedrock: false #指示服务器将基岩生成为单个平面层
+    hopper:
+      ignore-occluding-blocks: true #忽略遮挡块?
+      cooldown-when-full: false #漏斗满时冷却
+      disable-move-event: false #禁用InventoryMoveItemEvent
+    spawn-limits: #每个世界可以生成的怪物数量, -1 = bukkit.yml
+      monster: -1
+      creature: -1
+      underground_water_creature: -1
+      water_creature: -1
+      water_ambient: -1
+      ambient: -1
+    viewdistances: #假视距
+      no-tick-view-distance: 14
+    lightning-strike-distance-limit:
+      sound: -1
+      impact-sound: -1
+      flash: -1
+    wandering-trader:
+      spawn-minute-length: 1200 #流浪拴绳生成时间的长度 刻
+      spawn-day-length: 24000 #流浪商人刷新尝试之间的时间间隔 刻
+      spawn-chance-failure-increment: 25 #每次失败的流浪商人重生都会增加多少重生机会
+      spawn-chance-min: 25 #机会
+      spawn-chance-max: 75 #机会
+    door-breaking-difficulty: #列出僵尸能够破门的难度列表
+      zombie:
+      - HARD
+      vindicator:
+      - NORMAL
+      - HARD
+    entity-per-chunk-save-limit: #每个区块的实体数量限制
+      fireball: -1
+      small_fireball: -1
+      experience_orb: 16 #经验球
+      snowball: 32 #雪球
+      ender_pearl: 12 #末影珍珠
+      arrow: 24 #箭
+    unsupported-settings:
+      fix-invulnerable-end-crystal-exploit: true #如果设置为false将允许创建无敌的末影水晶?
+    mob-effects: #暴民效应?
+      undead-immune-to-certain-effects: true #不死生物对某些效果免疫
+      spiders-immune-to-poison-effect: true #蜘蛛免疫毒效应
+      immune-to-wither-effect: #免疫凋零效果
+        wither: true #枯萎
+        wither-skeleton: true #凋零骷髅
+    tick-rates:
+      sensor: #设置实体的传感器滴答率
+        villager:
+          secondarypoisensor: 40 #设置村民实体的次要传感器传感器的滴答率
+      behavior: #设置实体的行为节拍率
+        villager:
+          validatenearbypoi: -1 #设置 validatenearbypoi 行为的滴答率
+    feature-seeds:
+      generate-random-seeds-for-all: false #为您尚未设置种子的所有可用功能启用自动填充随机种子
