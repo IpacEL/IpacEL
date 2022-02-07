@@ -2,6 +2,8 @@
 Ipacamod Powered by Operator and Our-player
 https://ipacamod.cc/
 
+您可以在这里提出任何问题, 或是对服务器的功能增强. 如果我能看到一定会处理的
+
 
 
 ### 配置
@@ -20,6 +22,3 @@ https://ipacamod.cc/
 config: value #注释 ? 默认值
 
 
-
-### 问题
-您可以在这里提出任何问题, 或是对服务器的功能增强. 如果我能看到一定会处理的
