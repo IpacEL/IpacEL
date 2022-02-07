@@ -1,2 +1,2 @@
 # IpacEL
-Ipacamod Powered by Admin and Our-player
+Ipacamod Powered by Operator and Our-player
