@@ -1,4 +1,4 @@
-# IpacEL
+# /IpacEL/
 Ipacamod Powered by Operator and Our-player
 https://ipacamod.cc/
 
@@ -6,7 +6,7 @@ https://ipacamod.cc/
 
 
 
-## 配置
+## /config/
 核心会自动删除配置中的注释, 可以将带有注释的配置保存到其他位置. 编辑时修改带有注释的那份, 应用时覆盖到服务器目录里
 
 自用工具 "YAML配置注释同步", 用于更新配置时同步旧配置中的注释: https://ipacamod.cc/array/Tool-1/ [代码烂不保证效果和稳定性, 使用前备份配置]
@@ -15,7 +15,7 @@ https://ipacamod.cc/
 
 部分注释后面带问号表示不确定翻译是否正确[配置比较多, 一部分还没有检查...]部分注释后面的值表示默认值
 
-### 启动参数
+### /AnoCker.bat
 启动参数正在测试中, 不保证稳定性
 
 为了使用ShenandoahGC. 尝试使用启动参数优化高版本的MC
@@ -24,11 +24,11 @@ https://ipacamod.cc/
 
 
 
-## WEB
+## /web_/
 一些网页工具, 可以下载后放在自己的官网里使用
 
 
 
-## 客户端
+## /Client_/
 这是一个用于通过自带 JAVA 运行 HMCL 启动器的脚本, 至于我为什么要这样做? 或许是为了更好的性能? 或者减少一些问题吧
 
