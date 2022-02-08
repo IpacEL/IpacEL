@@ -27,6 +27,9 @@ https://ipacamod.cc/
 ## /web_/
 一些网页工具, 可以下载后放在自己的官网里使用
 
+### /dynmap/
+修改dynmap的页面样式
+
 
 
 ## /Client_/
