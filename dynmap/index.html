@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+
+	<title>[map]/ Ipacamod</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<!-- These 2 lines make us fullscreen on apple mobile products - remove if you don't like that -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+
+	<script type="text/javascript" src="js/jquery-3.5.1.js?_=3.2.1-531"></script>
+	<link rel="stylesheet" type="text/css" href="css/leaflet.css?_=3.2.1-531" />
+	<script type="text/javascript" src="js/leaflet.js?_=3.2.1-531"></script>
+
+	<script type="text/javascript" src="js/custommarker.js?_=3.2.1-531"></script>
+
+	<script type="text/javascript" src="js/dynmaputils.js?_=3.2.1-531"></script>
+	<script type="text/javascript" src="js/sidebarutils.js?_=3.2.1-531"></script>
+
+	<!--<link rel="stylesheet" type="text/css" href="css/embedded.css" media="screen" />-->
+	<link rel="stylesheet" type="text/css" href="css/standalone.css?_=3.2.1-531" media="screen" />
+	<link rel="stylesheet" type="text/css" href="css/dynmap_style.css?_=3.2.1-531" media="screen" />
+	<!-- CSS of Ipacamod --> <link rel="stylesheet" type="text/css" href="css/cake.css?v=2.1" media="screen" />
+	<!-- <link rel="stylesheet" type="text/css" href="css/override.css" media="screen" /> -->
+
+	<script type="text/javascript" src="version.js?_=3.2.1-531"></script>
+	<script type="text/javascript" src="js/jquery.json.js?_=3.2.1-531"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js?_=3.2.1-531"></script>
+	<script type="text/javascript" src="js/minecraft.js?_=3.2.1-531"></script>
+	<script type="text/javascript" src="js/map.js?_=3.2.1-531"></script>
+	<script type="text/javascript" src="js/hdmap.js?_=3.2.1-531"></script>
+	<script type="text/javascript" src="standalone/config.js?_=3.2.1-531"></script>
+
+	<script type="text/javascript">
+			$(document).ready(function() {
+				window.dynmap = new DynMap($.extend({
+					container: $('#mcmap')
+				}, config));
+			});
+	</script>
+
+</head>
+<body>
+<noscript><h1>您必须启用JavaScript才能使用此页面的功能/</h1></noscript>
+
+	<div id="mcmap"></div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+
+
+/*  style ------ Ipacamod  */
+
+
+/*滤镜*/
+.dynmap .map{
+	filter: 
+		brightness(105%) /*亮度*/
+		/*blur(0.0125rem) 模糊*/
+		saturate(102%) /*饱和度*/
+		contrast(105%) /*对比度*/
+	;
+}
+.dynmap > .map{
+	background:#1e2127!important;
+}
+
+
+/*使其不显示*/
+.leaflet-control-zoom, /*放大缩小*/
+.coord-control-label, /*"当前坐标"这段文字*/
+.compass, /*指南针, 没找到配置*/
+br{
+	display:none!important;
+}
+
+/*字体*/
+body, .dynmap .playerNameSm{
+	font-family:
+		/*英文[等宽]*/
+		Bitstream Vera Sans Mono,
+		Consolas,
+		DejaVu Sans Mono,
+		Lucida Console,
+		Liberation Mono,
+		/*中文*/
+		PingFang SC,
+		Microsoft YaHei,
+		SimHei
+	!important;
+}
+
+/*选中文本高亮*/
+::selection{background:#06B0FF33}
+
+/*工具栏 地图按钮*/
+.dynmap .sublist .item{border-radius:1px}
+.dynmap .sublist .item.selected{border:1px solid #008fff}
+
+
+/*顶部错误信息*/
+.alertbox{background-color:#008fff;border:0}
+
+/*坐标显示*/
+.dynmap .coord-control{
+	border-radius:1px;
+	margin:15px;
+	padding:5px;
+	width:fit-content;
+	background-color:rgba(0,0,0,0.6);
+	border:1px solid rgba(0,0,0,0.2);
+	border-top:1px solid #008fff;
+	/*文字*/
+	color:#fff;
+	font-size:0.875em;
+}
+
+/*玩家名称*/
+.dynmap .playerNameSm{
+	border-radius:0;
+    margin-top:3px;
+    padding:0 4px;
+}
+
+/*跟随玩家 白色方框*/
+.dynmap .playerlist .player.following{border-radius:1px}
+
+/*坐标显示, 行内转为块级*/
+.dynmap .coord-control-value{
+	display:block;
+}
+
+/*链接生成按钮*/
+.dynmap .dynmap-link a{background-color:#000}
+.dynmap .dynmap-link a:hover{background-color:#000}
+.dynmap .dynmap-link{
+	border-radius:100%;
+	background-color:rgba(0,0,0,0.6);
+	border:1px solid #008fff;
+}
+
+
+/*鼠标移出变透明*/
+.map .coord-control, /*显示坐标*/
+.dynmap .dynmap-link, /*链接*/
+.dynmap .hitbar{
+	transition: 0.7s 0.2s all;
+	opacity: 0;
+}
+.map:hover .coord-control,
+.map:hover .dynmap-link,
+.dynmap:hover .hitbar{
+	transition: 0.4s all;
+	opacity: 1;
+}
+
+
+/*解决hitbar打不开, 使hitbar移动时透明*/
+.dynmap .hitbar:hover{
+	transition: all 2.5s, opacity 0.3s;
+}
+.dynmap .sidebar:hover .hitbar{
+	opacity: 0;
+}
+
+
+/*世界边界*/
+.dynmap .leaflet-interactive{
+    stroke:#06b0ff!important;
+	stroke-width:2!important;
+	stroke-opacity:0.7!important;
+}
+
+
+/*网格背景*/
+.dynmap .map{
+    background-image: 
+		linear-gradient(90deg, rgba(164, 164, 164, 0.12) 10%,rgba(0, 0, 0, 0) 10%),
+		linear-gradient(rgba(164, 164, 164, 0.12) 10%, rgba(0, 0, 0, 0) 10%)!important;
+	background-size: 15px 15px!important;
+}
+.leaflet-layer{position:static!important}/*消除新视图空白区域加载的黑色背景*/
+.leaflet-tile{background:transparent!important}/*消除新加载图块的黑色背景*/
+
+
+
+
+
+
+
+
+
