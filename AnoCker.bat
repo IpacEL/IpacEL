@@ -9,42 +9,42 @@ choice /T 12 /D N
 	set /p n=<AnoCker.txt
 	set /a n+=1
 	>AnoCker.txt echo %n%
-	title IpacaEL_AnoCker  ÒÑÖØÆô=%r%/×Ü¼Æ=%n%
+	title IpacaEL_AnoCker  å·²é‡å¯=%r%/æ€»è®¡=%n%
 	
 	@echo  ------------------------
-	@echo     ----·şÎñ¶ËÔËĞĞ----
+	@echo     ----æœåŠ¡ç«¯è¿è¡Œ----
 	@echo  ------------------------
 	
 	
 	:: GC
-	:: -XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC ÆôÓÃShenandoahGC
-	:: -XX:+ParallelRefProcEnabled ¾¡¿ÉÄÜÆôÓÃ²¢ĞĞÒıÓÃ´¦Àí »º´æ
-	:: -XX:ParallelGCThreads=8 Ïß³Ì[ºËĞÄÊı]
-	:: [²»Ê¹ÓÃ] -XX:ConcGCThreads=1 ²¢·¢[1/8ºËĞÄÊı][µ÷¸ß¸ü¿ìÒ²¸ü³ÔĞÔÄÜ]
+	:: -XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC å¯ç”¨ShenandoahGC
+	:: -XX:+ParallelRefProcEnabled å°½å¯èƒ½å¯ç”¨å¹¶è¡Œå¼•ç”¨å¤„ç† ç¼“å­˜
+	:: -XX:ParallelGCThreads=8 çº¿ç¨‹[æ ¸å¿ƒæ•°]
+	:: [ä¸ä½¿ç”¨] -XX:ConcGCThreads=1 å¹¶å‘[1/8æ ¸å¿ƒæ•°][è°ƒé«˜æ›´å¿«ä¹Ÿæ›´åƒæ€§èƒ½]
 	
-	:: ÄÚ´æ
-	:: -XX:+AlwaysPreTouch ·ÖÅäÁ¬ĞøµÄÄÚ´æ²¢ÔÚÆô¶¯Ê±±£Áô
-	:: -XX:+UseNUMA Ê¹ÓÃUNMAÄÚ´æ·ÖÅä [²âÊÔ]
-	:: -XX:+UseCompressedOops ÔÚ64Î»»·¾³Ê¹ÓÃ32Î»Ö¸Õë [Ä¬ÈÏ]
-	:: -XX:+UseLargePages Ê¹ÓÃ´óÒ³ÃæÄÚ´æ
-	:: [Linux] -XX:+UseTransparentHugePages Ìá¸ß´ó¶ÑµÄĞÔÄÜ
+	:: å†…å­˜
+	:: -XX:+AlwaysPreTouch åˆ†é…è¿ç»­çš„å†…å­˜å¹¶åœ¨å¯åŠ¨æ—¶ä¿ç•™
+	:: [del] -XX:+UseNUMA ä½¿ç”¨UNMAå†…å­˜åˆ†é… [æµ‹è¯•] è¿™ä¸ªå‚æ•°å¯èƒ½é€ æˆä¸€äº›é—®é¢˜
+	:: -XX:+UseCompressedOops åœ¨64ä½ç¯å¢ƒä½¿ç”¨32ä½æŒ‡é’ˆ [é»˜è®¤]
+	:: -XX:+UseLargePages ä½¿ç”¨å¤§é¡µé¢å†…å­˜
+	:: [Linux] -XX:+UseTransparentHugePages æé«˜å¤§å †çš„æ€§èƒ½
 	
-	:: ÆäËû
-	:: -XX:+DisableExplicitGC ºöÂÔ´úÂëÖĞµÄ System.gc() µ÷ÓÃ ·ÀÖ¹²å¼şµ÷ÓÃGC
-	:: -XX:+UseSuperWord "ÓÃÕ¹¿ªÑ­»·ÖĞµÄÏòÁ¿²Ù×÷Ìæ»»Êı×é³õÊ¼»¯"
-	:: -XX:+OptimizeFill "ÓÃ intrisc Ìæ»»ÈÎºÎÌî³äÄ£Ê½"
+	:: å…¶ä»–
+	:: -XX:+DisableExplicitGC å¿½ç•¥ä»£ç ä¸­çš„ System.gc() è°ƒç”¨ é˜²æ­¢æ’ä»¶è°ƒç”¨GC
+	:: -XX:+UseSuperWord "ç”¨å±•å¼€å¾ªç¯ä¸­çš„å‘é‡æ“ä½œæ›¿æ¢æ•°ç»„åˆå§‹åŒ–"
+	:: -XX:+OptimizeFill "ç”¨ intrisc æ›¿æ¢ä»»ä½•å¡«å……æ¨¡å¼"
 	
-	:: ºóÖÃ²ÎÊı
-	:: --nogui ²»Æô¶¯GUI
-	:: [¿ÉÑ¡] --world-dir worlds ½«µØÍ¼ÎÄ¼ş·ÅÈë"worlds"Ä¿Â¼
+	:: åç½®å‚æ•°
+	:: --nogui ä¸å¯åŠ¨GUI
+	:: [å¯é€‰] --world-dir worlds å°†åœ°å›¾æ–‡ä»¶æ”¾å…¥"worlds"ç›®å½•
 	
-	"..\jdk-17.0.1.0.1+12\bin\java.exe" -server -Xms10G -Xmx10G -Xss512K -XX:+OptimizeFill -XX:+UseSuperWord -XX:+DisableExplicitGC -XX:+UseLargePages -XX:+UseNUMA -XX:+UseCompressedOops -XX:+AlwaysPreTouch -XX:ParallelGCThreads=8 -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC -jar purpur-1.17.1-1428.jar --nogui --world-dir worlds
+	"..\jdk-17.0.1.0.1+12\bin\java.exe" -server -Xms10G -Xmx10G -Xss512K -XX:+OptimizeFill -XX:+UseSuperWord -XX:+DisableExplicitGC -XX:+UseLargePages -XX:+UseCompressedOops -XX:+AlwaysPreTouch -XX:ParallelGCThreads=8 -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC -jar purpur-1.17.1-1428.jar --nogui --world-dir worlds
 	
 	:: java -Xms4G -Xmx4G -jar purpur-1.16.5-1171.jar -nogui
 	
 	
 	@echo  ------------------------
-	@echo     ----·şÎñ¶Ë½áÊø----
+	@echo     ----æœåŠ¡ç«¯ç»“æŸ----
 	@echo  ------------------------
 	
 	choice /T 64 /D N
