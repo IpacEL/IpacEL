@@ -6,14 +6,14 @@
 /*滤镜*/
 .dynmap .map{
 	filter: 
-		brightness(105%) /*亮度*/
-		/*blur(0.0125rem) 模糊*/
-		saturate(102%) /*饱和度*/
+		brightness(104%) /*亮度*/
+		/*blur(0.0126rem) 模糊*/
+		saturate(103%) /*饱和度*/
 		contrast(105%) /*对比度*/
 	;
 }
 .dynmap > .map{
-	background:#1e2127!important;
+	background:#18191c!important;
 }
 
 
@@ -82,12 +82,20 @@ body, .dynmap .playerNameSm{
 }
 
 /*链接生成按钮*/
-.dynmap .dynmap-link a{background-color:#000}
-.dynmap .dynmap-link a:hover{background-color:#000}
 .dynmap .dynmap-link{
-	border-radius:100%;
-	background-color:rgba(0,0,0,0.6);
-	border:1px solid #008fff;
+	border-radius:0;
+	background-color:transparent;
+}
+.dynmap .dynmap-link a{
+	border-radius:0;
+	background-color:transparent;
+}
+.dynmap .dynmap-link a:hover{
+	background-color:transparent;
+}
+.dynmap .dynmap-link-button {
+	background-image:url(images/external-link.svg);
+	filter:brightness(150%);
 }
 
 
