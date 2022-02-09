@@ -2,6 +2,10 @@
 
 /*  style ------ Ipacamod  */
 
+/*光标*/
+html, .map, .dynmap{cursor:url('images/command.png'),default}
+body a, button, td, .player{cursor:url('images/command_2.png'),default}
+
 
 /*滤镜*/
 .dynmap .map{
