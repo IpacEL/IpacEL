@@ -315,7 +315,7 @@ world-settings:
         apply-cursed-to-armor-slots: true #如果发射器被绑定诅咒附魔, 发射器是否应该将盔甲应用到盔甲插槽
         place-anvils: false #允许发射器放置铁砧
       end_portal:
-        safe-teleporting: true #在处理末地传送门传送时切换对不安全代码的保护. 对于某些漏洞利用, 禁用此功能可能是必要的
+        safe-teleporting: false #在处理末地传送门传送时切换对不安全代码的保护. 对于某些漏洞利用, 禁用此功能可能是必要的
       weeping_vines: #垂泪藤
         growth-modifier: 0.1 #改变藤蔓的生长速度
         max-growth-age: 25 #最大生长年龄
