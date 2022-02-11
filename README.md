@@ -24,6 +24,9 @@ https://ipacamod.cc/
 测试使用MC1.17.1和dragonwell17 JDK
 
 
+## /plugin/
+插件部分, 一些插件的配置或是使用例子, 此部分不完善
+
 
 ## /web_/
 一些网页工具
