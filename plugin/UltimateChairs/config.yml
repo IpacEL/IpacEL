@@ -1,0 +1,97 @@
+# +-------------------------------------------+ #
+# |                                           | #
+# |     UltimateChairs Configuration File     | #
+# |                                           | #
+# +-------------------------------------------+ #
+
+# List of block types to behave like chairs.
+# Any block can be added to the list.
+# STAIR - All stair types.
+# SLAB - All slab types.
+# CARPET - All carpet types.
+
+#/chair reload
+
+supported_blocks:
+  - STAIR                 #所有楼梯
+  - LILY_PAD              #荷叶
+  - CACTUS                #仙人掌
+  - HAY_BLOCK             #甘草块
+  - DRIED_KELP_BLOCK      #海带块
+  - LIGHT_WEIGHTED_PRESSURE_PLATE    #金压力板
+  
+  
+
+# 应该禁用椅子行为的世界。
+disabled_worlds:
+
+# 坐着的玩家是否会收到药水效果
+chair_apply_potion_effects: false
+
+# 药水效果列表。
+# Usage: POTION_EFFECT_NAME:AMPLIFIER:DURATION:IS_AMBIENT
+applied_potion_effects_list:
+#  - REGENERATION:0:3
+
+# 在对坐着的玩家应用效果之前等待多长时间（以秒为单位）。
+apply_effect_after_seconds: 0
+
+# 楼梯/楼板是否需要至少放置 2 个标志作为椅子。
+chair_requires_signs: false
+
+# 地毯是否需要围栏波纹管作为椅子使用。
+carpet_chair_requires_fence: false
+
+# 手持任何方块时，允许坐在椅子上。
+allow_sit_holding_anything: false
+
+# 允许坐在水下。
+allow_sit_underwater: true
+
+# 默认椅子关闭。 玩家必须使用“/chair toggle”命令才能坐下。
+default_chairs_off: false
+
+# 距离玩家必须在其中才能使用椅子。 设置为 0 以消除此限制。
+max_interaction_distance: 3
+
+# 插件应该检查玩家是否有权坐下或使用“/chair toggle”行为。
+check_permissions: false
+
+# 插件应该检查并在有新更新可用时通知。
+check_for_updates: false
+
+# 连接到 GriefPrevention 插件。
+griefprevention_support: false
+
+# 连接到 PlotSquared 插件并注册“chairs”标志。
+plotsquared_support: false
+
+# 连接到 Residence 插件并注册“chairs”标志。
+residence_support: false
+
+# 连接 WorldGuard 插件并注册“允许坐在椅子上”标志。
+worldguard_support: false
+
+# 消息应该在操作栏而不是聊天中发送。
+messages_in_action_bar: true
+
+chair_occupied_message: ""
+chair_too_far_away: ""
+chair_disabled_for_player: "To enable chairs type: /chair"
+chair_toggle_on_message: "You have &2enabled&r chair behavior"
+chair_toggle_off_message: "You have &4disabled&r chair behavior"
+
+griefprevention_no_sitting: "You can't sit in this claim"
+plotsquared_no_sitting: "You can't sit in this plot"
+residence_no_sitting_flag: "You can't sit in this residence"
+worldguard_no_sitting_flag: "You can't sit in this region"
+
+invalid_sit_location: "You are unable to sit in this location"
+player_not_found: "&cPlayer not found or is offline."
+player_kicked: "&cPlayer was kicked from the chair."
+no_permission: "You don't have permission to do that."
+only_in_game: "Command can only be run in-game."
+reload_config: "配置已重新加载"
+
+# Config version. Do NOT change this value.
+config_version: 2.5
