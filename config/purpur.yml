@@ -791,7 +791,7 @@ world-settings:
         takes-damage-from-water: false
         naturally-aggressive-to-players-chance: 0.0
         ridable: false
-        disable-treasure-searching: false
+        disable-treasure-searching: false #是否禁用海豚寻宝
         spit:
           cooldown: 20
           speed: 1.0
@@ -1101,7 +1101,7 @@ world-settings:
         takes-damage-from-water: false
         ridable: false
         ridable-in-water: false
-        brain-ticks: 2 #提高可减少村民的卡顿 1
+        brain-ticks: 2 #提高可减少村民的卡顿 1, 高于3时出现不同步
         use-brain-ticks-only-when-lagging: true
         can-be-leashed: false
         bypass-mob-griefing: false

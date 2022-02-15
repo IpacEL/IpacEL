@@ -135,7 +135,7 @@ world-settings:
     disable-thunder: false #是否禁用闪电
     disable-ice-and-snow: false #是否禁用冰雪
     mob-spawner-tick-rate: 1 #刷怪笼在可刷怪区域内尝试生成怪物的速度
-    container-update-tick-rate: 1 #容器更新刻
+    container-update-tick-rate: 1 #容器更新刻 1
     all-chunks-are-slime-chunks: false #所有区块都生成史莱姆
     portal-search-radius: 128 #服务器寻找地狱门的距离, 找不到就新建一个
     portal-create-radius: 16 #在此位置内随机创建一个
@@ -152,10 +152,10 @@ world-settings:
     remove-corrupt-tile-entities: true #自动删除它检测为损坏且无法修复的实体
     filter-nbt-data-from-spawn-eggs-and-related: true #从怪物蛋和掉落物中删除NBT数据
     enable-treasure-maps: true #允许村民交易藏宝图
-    treasure-maps-return-already-discovered: true #以找到的第一个宝藏位置为目标, 而不是第一个未被发现的宝藏位置
+    treasure-maps-return-already-discovered: true #允许藏宝图返回被发现的宝藏
     seed-based-feature-search: true #在特征搜索期间加载之前, 服务器是否应该检查块的生物群系 由世界种子确定 是否可以支持所需的特征, 这大大减少了特征搜索期间加载的块数量
     seed-based-feature-search-loads-chunks: true #当设置为false时, seed-based-feature-search 会加载目标块, 相反, 它将返回块的中心
-    max-entity-collisions: 5 #在达到此值后停止处理实体碰撞
+    max-entity-collisions: 2 #在达到此值后停止处理实体碰撞
     parrots-are-unaffected-by-player-movement: false #使鹦鹉黏在玩家身上, 用潜行让鹦鹉掉下来
     disable-creeper-lingering-effect: false #随机禁用苦力怕, 留下一个挥之不去的区域效果云
     experience-merge-max-value: -1 #单个经验球的存储最大值
@@ -168,7 +168,7 @@ world-settings:
     duplicate-uuid-saferegen-delete-range: 32 #如果多个具有重复 UUID 的实体在这么多块内, saferegen 将删除除 1 个之外的所有实体
     keep-spawn-loaded-range: 1 #出生点周围的区块保持加载
     auto-save-interval: -1 #示这个世界使用特定值进行自动保存, 而不是bukkit的全局值
-    max-auto-save-chunks-per-tick: 4 #自动保存系统每刻保存的区块数
+    max-auto-save-chunks-per-tick: 7 #自动保存系统每刻保存的区块数
     count-all-mobs-for-spawning: true #刷怪笼和杂项生物是否计入全局生物上限
     per-player-mob-spawns: true #启用此设置会产生大致相同数量的怪物, 但分布更均匀, 可提供更像单人游戏的体验
     entities-target-with-follow-range: false #设置服务器在定位实体时是否应使用跟随范围
@@ -184,7 +184,7 @@ world-settings:
     allow-vehicle-collisions: true #矿车碰撞
     fix-climbing-bypassing-cramming-rule: true #修复实体在攀爬过程中不受空间范围内最大实体数量限制 梯子 挤压
     ender-dragons-death-always-places-dragon-egg: true #控制末影龙在死亡时是否应该总是掉落龙蛋
-    update-pathfinding-on-block-update: true #控制在世界中更新方块时是否更新怪物的寻路
+    update-pathfinding-on-block-update: false #方块改变时更新寻路, 禁用后变成每5刻更新一次
     fix-wither-targeting-bug: true #修复了凋灵对玩家的定位 MC-29274
     allow-using-signs-inside-spawn-protection: false #允许玩家在生成保护内使用标志
     map-item-frame-cursor-limit: 7 #每个地图允许的游标数量 128
@@ -332,7 +332,7 @@ world-settings:
     generator-settings:
       flat-bedrock: false #指示服务器将基岩生成为单个平面层
     hopper:
-      ignore-occluding-blocks: true #忽略遮挡块?
+      ignore-occluding-blocks: false #漏斗是否忽略被埋在沙子里的漏斗矿车
       cooldown-when-full: false #漏斗满时冷却
       disable-move-event: false #禁用InventoryMoveItemEvent
     spawn-limits: #每个世界可以生成的怪物数量, -1 = bukkit.yml
@@ -342,7 +342,7 @@ world-settings:
       water_creature: -1
       water_ambient: -1
       ambient: -1
-    viewdistances: #假视距
+    viewdistances: #静态视距
       no-tick-view-distance: 14
     lightning-strike-distance-limit:
       sound: -1
@@ -361,10 +361,11 @@ world-settings:
       - NORMAL
       - HARD
     entity-per-chunk-save-limit: #每个区块的实体数量限制
-      fireball: -1
-      small_fireball: -1
-      experience_orb: 16 #经验球
-      snowball: 32 #雪球
+      wither_skull: 4 #凋零骷髅头
+      fireball: 4 #火球?
+      small_fireball: 4 #小火球?
+      experience_orb: 7 #经验球
+      snowball: 24 #雪球
       ender_pearl: 12 #末影珍珠
       arrow: 24 #箭
     unsupported-settings:
