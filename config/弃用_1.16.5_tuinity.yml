@@ -1,0 +1,28 @@
+# Configuration file for Tuinity.
+delay-chunkunloads-by: 47 #区块延迟卸载时间 秒 #区块延迟卸载时间 秒
+lag-compensate-block-breaking: true #确定区块破坏是否受TPS影响的选项 #确定区块破坏是否受TPS影响的选项
+use-new-light-engine: true #使用新的光引擎 #使用新的光引擎
+send-full-pos-for-hard-colliding-entities: true #向客户端发送精准实体位置数据 #向客户端发送精准实体位置数据
+config-version-please-do-not-modify-me: 2 #配置文件版本 #配置文件版本
+packet-limiter: #数据包限制器 #数据包限制器
+  kick-message: '§bIpacEL §f> §b数据包异常'
+  limits:
+    all:
+      interval: 0
+      max-packet-rate: 0
+    PacketPlayInAutoRecipe:
+      interval: 0
+      max-packet-rate: 0
+      action: DROP
+player-chunks: #玩家-区块 #玩家-区块
+  min-load-radius: 2 #在未节流的玩家周围尝试加载的区块半径? 最小载荷半径 #在未节流的玩家周围尝试加载的区块半径? 最小载荷半径
+  max-concurrent-sends: 15.0 #最大并发块数量 15.0 #最大并发块数量 15.0
+  max-concurrent-loads: -4.0 #服务器可以排队加载或生成的最大块数, 较高的值将保持块加载, 而较低的值将改善飞行时的块加载响应. 如果此值为负数, 则它会随玩家进行缩放 -6.0 #服务器可以排队加载或生成的最大块数, 较高的值将保持块加载, 而较低的值将改善飞行时的块加载响应. 如果此值为负数, 则它会随玩家进行缩放 -6.0
+  autoconfig-send-distance: true #是否根据玩家的客户端视野距离自动配置玩家的发送视野距离 #是否根据玩家的客户端视野距离自动配置玩家的发送视野距离
+  enable-mc162253-workaround: true #该解决方法会随每个数据包发送更多光照数据, 因此在某些情况下可能会给人们带来问题 #该解决方法会随每个数据包发送更多光照数据, 因此在某些情况下可能会给人们带来问题
+  target-chunk-send-rate: -35.0 #服务器在向玩家发送区块时不会超过这个速率. 此选项主要会影响峰值带宽 -35 #服务器在向玩家发送区块时不会超过这个速率. 此选项主要会影响峰值带宽 -35
+  enable-frustum-priority: true #是否先尝试在玩家的视锥体[他们正在看的地方]中加载块, 然后再在其视野距离半径中的其他块之前加载. 默认情况下禁用此选项 #是否先尝试在玩家的视锥体[他们正在看的地方]中加载块, 然后再在其视野距离半径中的其他块之前加载. 默认情况下禁用此选项
+world-settings:
+  default: {}
+  world: {}
+  world_the_end: {}
