@@ -7,8 +7,9 @@ info:
 projectile: #优化投射物设置
   max-loads-per-tick: 10 #每刻最大负载
   max-loads-per-projectile: 10 #每刻最大载荷
-# Optimizes entity brains when
-# they're far away from the player
+
+# 优化实体大脑时
+# 他们离玩家很远
 dab:
   enabled: true
   start-distance: 12 #"DEAR"开始生效的距离, 较小值远处生物AI容易弱化

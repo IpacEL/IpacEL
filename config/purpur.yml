@@ -33,7 +33,7 @@ settings:
     cannot-ride-mob: §bIpacEL §f> §b你不能启动那群暴徒
     unverified-username: default #当玩家因用户名未经验证而被踢出时显示的消息 default
   blocks:
-    disable-mushroom-updates: false #阻止蘑菇块更新它的块状态服务器端?
+    disable-mushroom-updates: false #禁用蘑菇更新
     disable-note-block-updates: false #阻止笔记块更新它的块状态服务器端?
     disable-chorus-plant-updates: false #阻止合唱工厂更新它的块状态服务器端?
     anvil: #使用铁砧修复物品应累计过于昂贵标签值
@@ -71,7 +71,7 @@ settings:
     gamemode:
       requires-specific-permission: false #是否需要权限控制允许 gamemode 指令的每个模式
     tpsbar: #tpsbar
-      title: <gray>TPS:</gray> <tps> <gray>MSPT:</gray> <mspt> <gray>Ping:</gray> <ping><gray>ms</gray>
+      title: <gray>TPS:</gray> <tps>  <gray>MSPT:</gray> <mspt>  <gray>Ping:</gray> <ping><gray>ms</gray>
       overlay: PROGRESS #设置Bossbar的覆盖类型, PROGRESS NOTCHED_6 NOTCHED_10 NOTCHED_12 NOTCHED_20
       fill-mode: MSPT #BossBar 栏应该显示什么 TPS, MSPT, PING
       tick-interval: 12 #更新周期

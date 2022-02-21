@@ -18,11 +18,7 @@ settings:
   permissions-file: permissions.yml #权限文件
   update-folder: update #插件更新目录
   plugin-profiling: false #/timings 是否发送插件的数据[关闭后报告没有插件部分]
-  
-  connection-throttle: 10 #连接受限
-  #4000表示4秒内只允许1个玩家进入. 如果改成100 1秒可以进入10个, 改成1 一秒允许进入1000个
-  #在最近的连接尝试后允许客户端再次连接之前的延迟 毫秒
-  
+  connection-throttle: 50 #连接受限, 100 = 1秒允许进入10位玩家
   query-plugins: false #服务器在远程查询时是否返回插件列表
   deprecated-verbose: default #当插件注册不推荐使用的事件时, 服务器是否显示警告
   shutdown-message: §bIpacEL §f> §a服务器已关闭
