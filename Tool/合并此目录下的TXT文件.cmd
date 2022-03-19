@@ -1,1 +1,0 @@
-type *.txt >>ºÏ²¢.txt
