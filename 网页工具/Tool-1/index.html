@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>[Tool-1]/ Ipacamod</title>
+	<link rel="stylesheet" href="/plugins/cake.css?v=1.72">
+	<link rel="stylesheet" href="plugins/yaml.css?v=0">
+</head>
+<body>
+	<p style="font-size:32px"><br /></p>
+	
+	<div class="container">
+		<div class="box">
+			<h2>配置文件工具</h2>
+			<p>自用工具, 不保证效果. 使用前请备份配置, 因此工具造成的损失不予赔偿</p>
+		</div>
+	</div>
+	
+	<br />
+	<div class="container">
+		
+		
+		<div class="frame-1">
+			<a href="#YAML配置注释同步">YAML配置注释同步</a>
+			<a href="#JSON压缩或格式化">JSON压缩或格式化</a>
+		</div>
+		
+		<div class="frame-2">
+			
+			<div id="YAML配置注释同步" class="box -mTop">
+				<h2>YAML配置注释同步</h2>
+				<p>使用此工具前请将旧配置放入新软件中等待新软件更新和转换错误配置</p>
+				<p>独占一行的配置会被移动到文本顶部, 也就是说不支持配置独占一行</p>
+				
+				<button onclick="_1()" class="btn">启动</button>
+				<span id="1_状态">状态: </span>
+				
+				<hr />
+				<p>带有注释的旧配置: </p>
+				<textarea id="1_输入" class="box" placeholder="输入_旧配置"></textarea>
+				<p>需要同步的新配置: </p>
+				<textarea id="1_输入_新配置" class="box" placeholder="输入_新配置"></textarea>
+				<p>同步后的新配置: </p>
+				<textarea id="1_输出" class="box -mBottom" placeholder="输出_新配置"></textarea>
+			</div>
+			
+			<br />
+			<div id="JSON压缩或格式化" class="box">
+				<h2>JSON压缩或格式化</h2>
+				<span id="2_状态">状态: </span>
+				
+				<hr />
+				<p>输入或输出格式化后的JSON: </p>
+				<textarea id="2_输入" oninput="_2(true)" class="box" placeholder="格式化_删除注释"></textarea>
+				<p>输入或输出压缩后的JSON: </p>
+				<textarea id="2_输出" oninput="_2(false)" class="box  -mBottom" placeholder="压缩"></textarea>
+			</div>
+		</div>
+		
+	</div>
+	<div style="height:calc(50vh)"></div>
+</body>
+	<script type="text/javascript" src="plugins/Tool-1.js">
+		// src="plugins/yaml.js?v=0.0"
+		// w = new Worker("plugins/yaml.js?v=0.0");
+	</script>
+</html>
+
+
