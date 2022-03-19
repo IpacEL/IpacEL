@@ -1,0 +1,43 @@
+# This is the main configuration file for Bukkit.
+# As you can see, there's actually not that much to configure without any plugins.
+# For a reference for any variable inside this file, check out the Bukkit Wiki at
+# https://www.spigotmc.org/go/bukkit-yml
+# 
+# If you need help on this file, feel free to join us on irc or leave a message
+# on the forums asking for advice.
+# 
+# IRC: #spigot @ irc.spi.gt #spigot @ irc.spi.gt
+#    (If this means nothing to you, just go to https://www.spigotmc.org/go/irc )
+# Forums: https://www.spigotmc.org/
+# Bug tracker: https://www.spigotmc.org/go/bugs
+
+
+settings:
+  allow-end: true #是否启用传送门
+  warn-on-overload: true #服务器是否显示"[警告]无法跟上! 系统时间是否更改, 或者服务器是否过载"的信息
+  permissions-file: permissions.yml #权限文件
+  update-folder: update #插件更新目录
+  plugin-profiling: false #/timings 是否发送插件的数据[关闭后报告没有插件部分]
+  connection-throttle: 50 #连接受限, 100 = 1秒允许进入10位玩家
+  query-plugins: false #服务器在远程查询时是否返回插件列表
+  deprecated-verbose: default #当插件注册不推荐使用的事件时, 服务器是否显示警告
+  shutdown-message: §bIpacEL §f> §a服务器已关闭
+  minimum-api: none
+spawn-limits: #生物生成上限
+  monsters: 70 #怪物
+  animals: 10 #动物
+  water-animals: 5 #水生物
+  water-ambient: 20 #水环境
+  water-underground-creature: 5 #水下生物?
+  ambient: 0 #环境
+chunk-gc:
+  period-in-ticks: 300 #区块卸载间隔 =15s
+ticks-per: #生物生成刻
+  animal-spawns: 400 #动物
+  monster-spawns: 1 #怪物
+  water-spawns: 1 #水生物
+  water-ambient-spawns: 1  #水环境
+  water-underground-creature-spawns: 1 #水下生物?
+  ambient-spawns: 1 #环境
+  autosave: 6000 #自动保存刻
+aliases: now-in-commands.yml #commands.yml的别名

@@ -1,0 +1,24 @@
+# Airplane Configuration
+# Read https://blog.airplane.gg/ to find out more about Airplane
+# Join our Discord to receive support & optimization help: https://discord.gg/3gtc45q
+info:
+  version: '1.0'
+# Optimizes projectile settings
+projectile: #优化投射物设置
+  max-loads-per-tick: 10 #每刻最大负载
+  max-loads-per-projectile: 10 #每刻最大载荷
+
+# 优化实体大脑时
+# 他们离玩家很远
+dab:
+  enabled: true
+  start-distance: 12 #"DEAR"开始生效的距离, 较小值远处生物AI容易弱化
+  max-tick-freq: 20 #限制距离玩家最远的实体卸载游戏机制的最低数量, 提高以降低怪物智商
+  activation-dist-mod: 9 #较小值远处生物AI容易弱化
+  blacklisted-entities: []
+# Configures Flare, the built-in profiler
+flare: #配置内置探查器Flare
+  url: https://flare.airplane.gg
+# Options for connecting to Airplane's online utilities
+web-services: #连接到飞机在线实用程序的选项
+  token: ''
