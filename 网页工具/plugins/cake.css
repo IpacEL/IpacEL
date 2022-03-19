@@ -14,10 +14,7 @@ body{
 body,html{margin:0}
 
 
-/*光标*/
-html{cursor:url('/plugins/img/command.png'),default}
-a,button,td,.cursor-2{cursor:url('/plugins/img/command_2.png'),default}
-textarea,input{cursor:url('/plugins/img/command_3.png'),default}
+
 /*滚动条*/
 ::-webkit-scrollbar{width:0.375rem;height:0.375rem}
 ::-webkit-scrollbar-thumb{background:#62626280}
