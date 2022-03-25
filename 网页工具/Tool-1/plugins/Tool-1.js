@@ -35,9 +35,9 @@ function _1(){
 	
 	//输出 outConfigInput
 	//独占一行的注释
-	if($outErr !== '') $outErr = "独占一行的注释: \r\n"+ $outErr +"\r\n\r\n";
+	if($outErr !== '') $outErr = "#独占一行的注释: \r\n"+ $outErr +"\r\n\r\n";
 	//输出到输入框
-	_getd('outConfigInput').value = $outErr + $outData;
+	_getd('outConfigInput').value = $outErr + $newConfig;
 	
 	_getd('_1status').innerHTML = '状态: 转换完成';
 };
