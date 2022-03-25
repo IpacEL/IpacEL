@@ -34,37 +34,33 @@
 				<p>独占一行的配置会被移动到文本顶部, 也就是说不支持配置独占一行</p>
 				
 				<button onclick="_1()" class="btn">启动</button>
-				<span id="1_状态">状态: </span>
+				<span id="_1status">状态: </span>
 				
 				<hr />
 				<p>带有注释的旧配置: </p>
-				<textarea id="1_输入" class="box" placeholder="输入_旧配置"></textarea>
+				<textarea id="oldConfigInput" class="box" placeholder="输入_旧配置"></textarea>
 				<p>需要同步的新配置: </p>
-				<textarea id="1_输入_新配置" class="box" placeholder="输入_新配置"></textarea>
+				<textarea id="newConfigInput" class="box" placeholder="输入_新配置"></textarea>
 				<p>同步后的新配置: </p>
-				<textarea id="1_输出" class="box -mBottom" placeholder="输出_新配置"></textarea>
+				<textarea id="outConfigInput" class="box -mBottom" placeholder="输出_新配置"></textarea>
 			</div>
 			
 			<br />
 			<div id="JSON压缩或格式化" class="box">
 				<h2>JSON压缩或格式化</h2>
-				<span id="2_状态">状态: </span>
+				<span id="_2status">状态: </span>
 				
 				<hr />
 				<p>输入或输出格式化后的JSON: </p>
-				<textarea id="2_输入" oninput="_2(true)" class="box" placeholder="格式化_删除注释"></textarea>
+				<textarea id="JSONInput" oninput="_2(true)" class="box" placeholder="格式化_删除注释"></textarea>
 				<p>输入或输出压缩后的JSON: </p>
-				<textarea id="2_输出" oninput="_2(false)" class="box  -mBottom" placeholder="压缩"></textarea>
+				<textarea id="outJSONInput" oninput="_2(false)" class="box  -mBottom" placeholder="压缩"></textarea>
 			</div>
 		</div>
 		
 	</div>
 	<div style="height:calc(50vh)"></div>
 </body>
-	<script type="text/javascript" src="plugins/Tool-1.js">
-		// src="plugins/yaml.js?v=0.0"
-		// w = new Worker("plugins/yaml.js?v=0.0");
-	</script>
 </html>
 
 
