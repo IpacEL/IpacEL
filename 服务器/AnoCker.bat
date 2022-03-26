@@ -9,44 +9,48 @@ choice /T 12 /D N
 	set /p n=<AnoCker.txt
 	set /a n+=1
 	>AnoCker.txt echo %n%
-	title IpacaEL_AnoCker  ÒÑÖØÆô=%r%/×Ü¼Æ=%n%
+	title IpacaEL_AnoCker  å·²é‡å¯=%r%/æ€»è®¡=%n%
 	
 	@echo  ------------------------
-	@echo     ----·şÎñ¶ËÔËĞĞ----
+	@echo     ----æœåŠ¡ç«¯è¿è¡Œ----
 	@echo  ------------------------
 	
-	
-	:: java -Xms4G -Xmx4G -jar purpur-1.16.5-1171.jar -nogui
 	
 	
 	:: GC
-	:: -XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC ÆôÓÃShenandoahGC
-	:: -XX:+ParallelRefProcEnabled ¾¡¿ÉÄÜÆôÓÃ²¢ĞĞÒıÓÃ´¦Àí »º´æ
-	:: -XX:ParallelGCThreads=8 Ïß³Ì[Ä¬ÈÏºËĞÄÊı]
-	:: -XX:ConcGCThreads=4 ²¢·¢[Ä¬ÈÏ1/8ºËĞÄÊı][µ÷¸ß¸ü¿ìÒ²¸ü³ÔĞÔÄÜ]
-	:: -XX:+PerfDisableSharedMem ½ûÖ¹Ğ´Í³¼ÆÎÄ¼ş
+	:: -XX:+UseShenandoahGC å¯ç”¨SGC
+	:: -XX:GCTimeRatio=98 åº”ç”¨ç¨‹åºè¿è¡Œæ—¶é—´ç™¾åˆ†æ¯”[ä¸GC] ç»™GCæ›´å¤šæ—¶é—´_å‡å°‘GCæ¬¡æ•°
+	:: -XX:+ParallelRefProcEnabled å°½å¯èƒ½å¯ç”¨å¹¶è¡Œå¼•ç”¨å¤„ç† ç¼“å­˜
+	:: [æ£€æŸ¥æ’ä»¶, ä¸è¦ä¸€ç›´ä½¿ç”¨å®ƒ] // -XX:+DisableExplicitGC å¿½ç•¥ä»£ç ä¸­çš„ System.gc() è°ƒç”¨ é˜²æ­¢æ’ä»¶è°ƒç”¨GC
 	
-	:: ÄÚ´æ
-	:: -XX:+AlwaysPreTouch ·ÖÅäÁ¬ĞøµÄÄÚ´æ²¢ÔÚÆô¶¯Ê±±£Áô
-	:: -XX:+UseLargePages Ê¹ÓÃ´óÒ³ÃæÄÚ´æ
-	:: [LINUX] -XX:+UseTransparentHugePages Í¸Ã÷´óÒ³Ãæ, Ìá¸ß´ó¶ÑµÄĞÔÄÜ
+	:: å†…å­˜
+	:: -XX:+AlwaysPreTouch åˆ†é…è¿ç»­çš„å†…å­˜å¹¶åœ¨å¯åŠ¨æ—¶ä¿ç•™
+	:: -XX:+UseLargePages ä½¿ç”¨å¤§é¡µé¢å†…å­˜
+	:: [LINUX] -XX:+UseTransparentHugePages é€æ˜å¤§é¡µé¢, æé«˜å¤§å †çš„æ€§èƒ½
+	:: -XX:+PerfDisableSharedMem å°†åŒ¿åå†…å­˜ç”¨äºæ€§èƒ½è®¡æ•°å™¨
 	
-	:: ÆäËû
-	:: -XX:+UseNUMA Èô¸ÉCPU×é³ÉÒ»¸ö×é, ×éÖ®¼äÓĞµã¶ÔµãµÄÍ¨Ñ¶, Ìá¸ßĞÔÄÜ [²âÊÔ]
-	:: -XX:+DisableExplicitGC ºöÂÔ´úÂëÖĞµÄ System.gc() µ÷ÓÃ ·ÀÖ¹²å¼şµ÷ÓÃGC
+	:: å…¶ä»–/JIT
+	:: [ç³»ç»Ÿæ”¯æŒ] -XX:+UseNUMA è‹¥å¹²CPUç»„æˆä¸€ä¸ªç»„, ç»„ä¹‹é—´æœ‰ç‚¹å¯¹ç‚¹çš„é€šè®¯ [æµ‹è¯•]
+	:: -Xss640K æ¯ä¸ªçº¿ç¨‹çš„å †æ ˆå¤§å° 256?
+	:: -Xms20G -Xmx20G #å †æ ˆå¤§å°
+	:: [é»˜è®¤] -server ä½¿ç”¨C2ç¼–è¯‘å™¨
 	
-	:: ºóÖÃ²ÎÊı
-	:: --nogui ²»Æô¶¯GUI
-	:: [¿ÉÑ¡] --world-dir worlds ½«µØÍ¼ÎÄ¼ş·ÅÈë"worlds"Ä¿Â¼
+	:: ###ä¸´æ—¶###
+	:: -XX:+CITime JVMå…³é—­æ—¶å¾—åˆ°å„ç§ç¼–è¯‘çš„ç»Ÿè®¡ä¿¡æ¯
+	:: -XX:-BackgroundCompilation ç¦ç”¨åå°ç¼–è¯‘
+	
+	:: spigotå‚æ•° [æ”¾åœ¨æ ¸å¿ƒåé¢]
+	:: --nogui ä¸å¯åŠ¨GUI
+	:: [å¯é€‰] --world-dir worlds å°†åœ°å›¾æ–‡ä»¶æ”¾å…¥"worlds"ç›®å½•
 	
 	
-	"..\jdk-17.0.1.0.1+12\bin\java.exe" -server -Xms20G -Xmx20G -Xss512K -XX:+DisableExplicitGC -XX:+UseLargePages -XX:+AlwaysPreTouch -XX:+PerfDisableSharedMem -XX:ConcGCThreads=4 -XX:ParallelGCThreads=8 -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC -jar purpur-1.17.1-1428.jar --nogui --world-dir worlds
+	"..\dragonwell-17.0.2.0.2+8-GA\bin\java.exe" -XX:+CITime -server -Xms20G -Xmx20G -Xss640K -XX:+UseNUMA -XX:+PerfDisableSharedMem -XX:+UseLargePages -XX:+AlwaysPreTouch -XX:+ParallelRefProcEnabled -XX:GCTimeRatio=97 -XX:+UseShenandoahGC -jar purpur-1.17.1-1428.jar --nogui --world-dir worlds
 	
-	:: "..\jdk-17.0.1.0.1+12\bin\java.exe" -server -Xms20G -Xmx20G -Xss640K -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar purpur-1.17.1-1428.jar --nogui --world-dir worlds
 	
+	:: java -Xms4G -Xmx4G -jar purpur-1.16.5-1171.jar --nogui --world-dir worlds
 	
 	@echo  ------------------------
-	@echo     ----·şÎñ¶Ë½áÊø----
+	@echo     ----æœåŠ¡ç«¯ç»“æŸ----
 	@echo  ------------------------
 	
 	choice /T 64 /D N
