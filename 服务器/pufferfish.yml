@@ -1,0 +1,66 @@
+# 河豚配置
+# 查看 Pufferfish Host 以获得最高性能的服务器托管：https://pufferfish.host
+# 加入我们的 Discord 以获得支持：https://discord.gg/reZw4vQV9H
+# 在 https://ci.pufferfish.host/job/Pufferfish 下载新版本
+info:
+  version: '1.0'
+# 是否应该启用异步生物生成。
+# 在具有许多实体的服务器上，这可以将性能提高多达 15%。 你必须有
+# paper 的 per-player-mob-spawns: true 才能正常工作。
+# 可以将产生新生物所涉及的大部分计算工作卸载到不同的线程
+enable-async-mob-spawning: true
+
+# Sentry DSN 用于改进错误记录，留空以禁用
+# 从 https://sentry.io/ 获取
+sentry-dsn: ''
+
+# 是否禁用书与笔
+enable-books: true
+
+# 优化弹丸设置
+projectile:
+  # 控制允许的块数
+  # 由射弹在一个滴答声中同步加载。
+  max-loads-per-tick: 10
+  # 控制一个射弹有多少块
+  # 可以在它获取之前在它的生命周期内加载
+  # 自动删除。
+  max-loads-per-projectile: 10
+
+# 配置 Flare，内置分析器
+flare:
+  # 设置用于配置文件的服务器。
+  url: https://flare.airplane.gg
+
+
+# 优化实体大脑时
+# 他们离玩家很远
+dab:
+  enabled: true
+  # 这个值决定了实体的距离
+  # 从玩家开始受到 DEAR 的影响。
+  start-distance: 12
+  # 这个值定义了最远实体的频率，以刻度为单位
+  # 将勾选他们的探路者和行为。 20 = 1 秒
+  max-tick-freq: 20
+  # 这个值定义了多少距离修改了一个实体的
+  # 滴答频率。 频率 = (distanceToPlayer^2) / (2^value)
+  # 如果你想让更远的实体不那么频繁地打勾，使用 7。
+  # 如果您希望更远的实体更频繁地打勾，请尝试 9。
+  activation-dist-mod: 8
+  # 激活时忽略的实体列表
+  blacklisted-entities: 
+    #- villager
+
+# 启用后，此选项会优化每个实体必须执行的窒息检查
+# 对于数以万计的实体，窒息检查可能需要相当长的时间来运行，并且此选项速率将检查限制为仅在实体能够受到伤害时运行
+# 对原版影响很小
+enable-suffocation-optimization: true
+
+# 此选项设置为 时true，将阻止非活动实体选择新的探路者目标
+# 有可能影响一些农场
+# inactive-goal-selector-disable
+inactive-goal-selector-throttle: false
+# 连接到 Pufferfish/Airplane 的在线工具的选项
+web-services:
+  token: ''
