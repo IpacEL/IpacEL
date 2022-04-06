@@ -5,13 +5,13 @@ Ipacamod is powered by Dev and Our-player https://ipacamod.cc/
 个人能力有限, 如有错误希望指出...
 
 ## 服务器 部分文件已更新到 1.18.2
-- [ ] purpur
-- [x] paper
-- [x] spigot
-- [x] bukkit
-- [x] mirai
-- [x] pufferfish
-- [x] server.properties
+- [ ] purpur [1.17.1-]
+- [x] paper [1.18.2+]
+- [x] spigot [1.18.2]
+- [x] bukkit [1.18.2]
+- [x] mirai [1.18.2]
+- [x] pufferfish [1.18.2]
+- [x] server.properties [1.18.2]
 
 核心会自动删除配置中的注释, 可以将带有注释的配置保存到其他位置. 编辑时修改带有注释的那份, 应用时覆盖到服务器目录里.  
 工具 "YAML配置注释同步", 用于更新配置时同步旧配置中的注释: [/web/yaml_json_1/].  
