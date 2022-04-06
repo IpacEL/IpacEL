@@ -4,7 +4,7 @@ Ipacamod is powered by Dev and Our-player https://ipacamod.cc/
 您可以在这里提出任何问题, 或是对服务器的功能增强. 如果我能看到一定会处理的.  
 个人能力有限, 如有错误希望指出...
 
-## 服务器 部分文件已更新到 1.18.2
+## 服务器
 - [ ] purpur [1.17.1-]
 - [x] paper [1.18.2+]
 - [x] spigot [1.18.2]
