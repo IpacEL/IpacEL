@@ -50,7 +50,7 @@ Ipacamod 服务器客户端:
 
 ```
 欢迎加入 Ipacamod 服务器: 
-	- Ipacamod Powered by Admin and Our-player
+	- Ipacamod powered by Dev and Our-player
 	# 服务器的运行离不开每位玩家的参与, 欢迎加入Ipacamod服务器 !
 ```
  
