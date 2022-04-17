@@ -17,6 +17,7 @@ choice /T 12 /D N
 	@echo .
 	
 	
+	::https://ipacamod.cc/Message/?where=ID=_aAxORv6dHNc
 	
 	"..\dragonwell-17.0.2.0.2+8-GA\bin\java.exe" -XX:+UnlockExperimentalVMOptions --add-modules=jdk.incubator.vector -server -Xms14G -Xmx14G -Xss768K -XX:+UseNUMA -XX:CICompilerCount=12 -XX:+PerfDisableSharedMem -XX:LargePageSizeInBytes=2M -XX:+UseLargePages -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+ParallelRefProcEnabled -XX:GCTimeRatio=98 -XX:ShenandoahGCMode=iu -XX:+UseShenandoahGC -jar Mirai-Purpur-1.18.2-R0.1-SNAPSHOT.jar --world-dir worlds --nogui
 	
