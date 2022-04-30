@@ -1,6 +1,6 @@
 # This is the main configuration file for options provided by Mirai.
 
-map-update-interval: 5
+map-update-interval: 1 # 设置为 1以获得更平滑的地图旋转 5
 verbose: false
 logger: # 删除控制台中无用的日志消息
   suppress-init-legacy-material-errors: true # 初始化遗留材料错误
