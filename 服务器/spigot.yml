@@ -152,7 +152,7 @@ world-settings:
       sprint-multiplier: 0.1
       other-multiplier: 0.0
     max-tick-time: # 在服务器跳到下一个任务之前, 这些会消耗计算的时间[毫秒]
-      tile: 320 # 区块
-      entity: 320 # 实体
+      tile: 1000 # 区块
+      entity: 1000 # 实体
     squid-spawn-range: # 鱿鱼生成范围
       min: 45.0
