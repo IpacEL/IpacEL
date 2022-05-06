@@ -1,0 +1,158 @@
+# This is the main configuration file for Spigot.
+# As you can see, there's tons to configure. Some options may impact gameplay, so use
+# with caution, and make sure you know what each option does before configuring.
+# For a reference for any variable inside this file, check out the Spigot wiki at
+# http://www.spigotmc.org/wiki/spigot-configuration/
+#
+# If you need help with the configuration or have any questions related to Spigot,
+# join us at the Discord or drop by our forums and leave a post.
+#
+# Discord: https://www.spigotmc.org/go/discord
+# Forums: http://www.spigotmc.org/
+
+config-version: 12 # 配置版本
+commands:
+  spam-exclusions: # 禁用的指令
+    - /skill
+  log: true # 日志
+  tab-complete: 0 # 启动TAB补全所需的消息框已有字符数量
+  send-namespaced: true # TAB补全 显示带有<plugin>:<command>的语法
+  silent-commandblock-console: false # 是否将命令块输出发送到控制台
+  replace-commands: # 禁用Bukkit对所列命令的实现并启用它们的原始vanilla行为
+    - setblock
+    - summon
+    - testforblock
+    - tellraw
+messages:
+  whitelist: §bIpacEL §f> §b您不在白名单里, 请联系管理员申请或恢复
+  unknown-command: §bIpacEL §f> §a这个指令出乎意料的掉进了水中
+  server-full: §bIpacEL §f> §b服务器已满
+  outdated-client: §bIpacEL §f> §b我们在{0}版本等你回来
+  outdated-server: §bIpacEL §f> §b我们在{0}版本等你回来
+  restart: §bIpacEL §f> §a服务器正在重启
+settings:
+  log-named-deaths: true # 以日志命名的死亡?
+  timeout-time: 120 # 在控制台中执行线程转储之前, 服务器应该停止响应多长时间 秒 60
+  restart-on-crash: true # 控制服务器是否会在发生崩溃时自动尝试重新启动服务器
+  restart-script: ./start.sh # 重启脚本
+  bungeecord: false # 切换各种仅限BungeeCord的功能, 这包括IP白名单
+  netty-threads: 8 # 控制Netty用于执行网络的线程数
+  sample-count: 0 # 控制将鼠标悬停在客户端服务器列表中的玩家数量上时显示的玩家名称
+  player-shuffle: 0 # 防止玩家通过重新进入修改其刻序列的位置 0
+  user-cache-size: 128 # 控制usercache.json中存储的最大玩家数 [/]
+  save-user-cache-on-stop-only: true # 当用户缓存增长到足够大时, 这将浪费CPU时间甚至明显滞后于服务器
+  moved-wrongly-threshold: 4096 # 控制 错误移动 检查的阈值 0.0625
+  moved-too-quickly-multiplier: 4096 # 控制“移动太快”检查的乘数 10.0
+  debug: false # 调试
+  log-villager-deaths: false # 是否记录有关村民死亡的信息
+  attribute: # 属性上限
+    maxHealth:
+      max: 2048.0
+    movementSpeed:
+      max: 2048.0
+    attackDamage:
+      max: 2048.0
+stats:
+  disable-saving: false # 如果启用, 则服务器将不会保存玩家统计数据或成就
+  forced-stats: {}
+advancements: # 如果启用, 服务器将不会保存 1.12 中引入的玩家进度
+  disable-saving: false
+  disabled: # 禁用的进度列表, 此列表中的进度在游戏中无法获得, 也不会显示在进度GUI中
+    - minecraft:story/disabled
+players: # 玩家: 禁用保存 ?
+  disable-saving: false
+world-settings:
+  default:
+    below-zero-generation-in-existing-chunks: true
+    seed-nether: 30084232
+    seed-stronghold: default
+    simulation-distance: default
+    thunder-chance: 100000 # 闪电机会
+    verbose: false # 是否在服务器启动时在控制台/日志中显示每个世界的详细报告和配置
+    view-distance: default # 视距
+    mob-spawn-range: 9 # 玩家周围的半径以区块为单位, 怪物会在其中生成, 与加载视距一致 4
+    item-despawn-rate: 6000 # 物品消失刻
+    hopper-amount: 1 # 控制漏斗在一个漏斗滴答周期中接收/发出的最大物品数量
+    arrow-despawn-rate: 1200 # 箭消失刻
+    trident-despawn-rate: 2400 # 三叉戟消失刻 1200
+    zombie-aggressive-towards-villager: true # 禁用后, 僵尸将不再试图杀死村民
+    nerf-spawner-mobs: false # 刷怪笼的生物没有AI
+    enable-zombie-pigmen-portal-spawns: true # 禁用后, 下界传送门将不再在其中随机生成僵尸猪人
+    dragon-death-sound-radius: 0 # 龙死声半径
+    wither-spawn-sound-radius: 0 # 凋灵生成声音半径
+    end-portal-sound-radius: 0 # 末端门户声音半径
+    max-tnt-per-tick: 64 # 每tick最多有几个TNT实体被计算
+    hanging-tick-frequency: 100 # 控制悬挂实体 绘画 物品框架 LeashKnot 等 的刻度更新间隔
+    max-entity-collisions: 4 # 在达到此值后停止处理实体碰撞
+    growth: # 作物生长速度
+      twistingvines-modifier: 100
+      weepingvines-modifier: 100
+      cavevines-modifier: 100
+      glowberry-modifier: 100
+      cactus-modifier: 100
+      cane-modifier: 100
+      melon-modifier: 100
+      mushroom-modifier: 100
+      pumpkin-modifier: 100
+      sapling-modifier: 100
+      beetroot-modifier: 100
+      carrot-modifier: 100
+      potato-modifier: 100
+      wheat-modifier: 100
+      netherwart-modifier: 100
+      vine-modifier: 100
+      cocoa-modifier: 100
+      bamboo-modifier: 100
+      sweetberry-modifier: 100
+      kelp-modifier: 100
+    merge-radius: # 经验球和物品合并范围
+      item: 2.5 # 2.5
+      exp: 3.0 # 3.0
+    entity-activation-range: # 距离多少方块范围内的实体会被激活
+      ignore-spectators: false
+      animals: 32 # 动物
+      monsters: 32 # 怪物
+      raiders: 48 # 掠夺者
+      misc: 5 # 掉落物/经验 16
+      water: 16 # 鱼?
+      villagers: 32 # 村民
+      flying-monsters: 32 # 幻翼
+      villagers-work-immunity-after: 100
+      villagers-work-immunity-for: 20
+      villagers-active-for-panic: true
+      tick-inactive-villagers: true # 设置为false会让村民补货需要玩家在其旁边挂机才能进行, 否则村民越多越卡
+      wake-up-inactive:
+        animals-max-per-tick: 4
+        animals-every: 1200
+        animals-for: 100
+        monsters-max-per-tick: 8
+        monsters-every: 400
+        monsters-for: 100
+        villagers-max-per-tick: 4
+        villagers-every: 600
+        villagers-for: 100
+        flying-monsters-max-per-tick: 8
+        flying-monsters-every: 200
+        flying-monsters-for: 100
+    entity-tracking-range: # 实体可见范围
+      players: 64 # 玩家 48
+      animals: 48 # 动物
+      monsters: 48 # 怪物
+      misc: 32 # 杂项
+      other: 64 # 其他
+    ticks-per: # 漏斗
+      hopper-transfer: 8 # 漏斗转移物品的刻度
+      hopper-check: 1 # 漏斗检查上方物品的刻度
+    hunger: # 饱食度消耗
+      jump-walk-exhaustion: 0.05
+      jump-sprint-exhaustion: 0.2
+      combat-exhaustion: 0.1
+      regen-exhaustion: 6.0
+      swim-multiplier: 0.01
+      sprint-multiplier: 0.1
+      other-multiplier: 0.0
+    max-tick-time: # 在服务器跳到下一个任务之前, 这些会消耗计算的时间[毫秒]
+      tile: 320 # 区块
+      entity: 320 # 实体
+    squid-spawn-range: # 鱿鱼生成范围
+      min: 45.0
