@@ -1,7 +1,7 @@
 # C.]Ipacamod IpacEL[4.3
 [ipowered by Dev and Our-player](https://ipacamod.cc/)  
-您可以在这里提出任何问题, 或是对服务器的功能增强. 如果我能看到一定会处理的.  
-个人能力有限, 如有错误希望指出...
+您可以在这里提出任何问题, 或是对服务器的功能增强.  
+目前缺少维护, 请等待一段时间, 之后我将推出一些更有用的东西.  
 
 ## 服务器
 - [x] purpur [1.18.2-]
@@ -17,7 +17,7 @@
 
 ## 服务器
 
-启动参数 [测试中]: https://ipacamod.cc/Message/?m=8EOA6HdecI
+启动参数: https://ipacamod.cc/Message/?m=8EOA6HdecI
 - [x] ShenandoahGC
 - [x] G1GC 
 
